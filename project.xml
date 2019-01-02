@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="03bd0a72-b814-4fcd-ba19-9ae679f7a532" activeEnvironment="Default" name="gaustest.colonseguros.com" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="95b92dea-3537-4a1f-bf5a-7e923961c978" wsaVersion="NONE" name="Colon_WS_CotEmisionSoapBinding" type="wsdl" bindingName="{GAUSmp}Colon_WS_CotEmisionSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://gaustest.colonseguros.com.ar/gausmpcolontest/servlet/acolon_ws_cotemision?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://gaustest.colonseguros.com.ar/gausmpcolontest/servlet/acolon_ws_cotemision?wsdl"><con:part><con:url>https://gaustest.colonseguros.com.ar/gausmpcolontest/servlet/acolon_ws_cotemision?wsdl</con:url><con:content><![CDATA[<definitions name="Colon_WS_CotEmision" targetNamespace="GAUSmp" xmlns:tns="GAUSmp" xmlns:wsdlns="GAUSmp" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns3="GAUSmp" xmlns:tns2="GausMpDesaDesa" xmlns:tns1="Genexus">
+  <types>
+    <schema targetNamespace="GAUSmp" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+      <import namespace="GausMpDesaDesa"/>
+      <import namespace="Genexus"/>
+      <complexType name="COLONCotEmision_Req">
+        <all>
+          <element name="CnlComExtCod" type="xsd:int"></element>
+          <element name="CnlSubComExtCod" type="xsd:short"></element>
+          <element name="CnlComLinEmi" type="xsd:short"></element>
+          <element name="EsCotizacion" type="xsd:string"></element>
+          <element name="CnlComOpeDes" type="xsd:string"></element>
+          <element name="NroCotizacion" type="xsd:int"></element>
+          <element name="NroCotizacionPortal" type="xsd:int"></element>
+          <element name="MonCod" type="xsd:short"></element>
+          <element name="OpFecIniVig" type="xsd:date"></element>
+          <element name="OpFecFinVig" type="xsd:date"></element>
+          <element name="ArtDupFac" type="xsd:short"></element>
+          <element name="ArtDupPol" type="xsd:short"></element>
+          <element name="PpgCod" type="xsd:short"></element>
+          <element name="CobroAlta" type="xsd:string"></element>
+          <element name="LinNegCod" type="xsd:short"></element>
+          <element name="ConvNegCod" type="xsd:short"></element>
+          <element name="ArtDupPolTipRen" type="xsd:string"></element>
+          <element name="TextoUsuario" type="xsd:string"></element>
+          <element name="IntermediarioSDT" type="tns3:colIntermediarioSDT"></element>
+          <element name="TomadorSDT" type="tns3:wscolTomadorSDT"></element>
+          <element name="SegmentosSDT" type="tns3:wscolSegmentosSDT"></element>
+          <element name="VehiculosSDT" type="tns3:wscolVehiculosSDT"></element>
+          <element name="AseguradosSDT" type="tns3:colemiAseguradosSDT"></element>
+          <element name="RiesgosSDT" type="tns3:wscolRiesgosSDT"></element>
+          <element name="CoberturasSDT" type="tns3:colCoberturasSDT"></element>
+          <element name="AdicionalesSDT" type="tns3:colAdicionalesSDT"></element>
+          <element name="AjustesTecnicosSDT" type="tns3:wscolAjustesTecnicosSDT"></element>
+          <element name="AjustesComercialesSDT" type="tns3:colAjustesComercialesSDT"></element>
+          <element name="BeneficiariosSDT" type="tns3:colBeneficiariosSDT"></element>
+          <element name="ReferenciasSDT" type="tns3:wscolReferenciasSDT"></element>
+          <element name="DocumentosSDT" type="tns3:colExpedientesSDT"></element>
+          <element name="MedioPagoSDT" type="tns3:colMedioPagoSDT"></element>
+        </all>
+      </complexType>
+      <complexType name="colIntermediarioSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolIntermediarioSDT.Item" type="tns3:wscolIntermediarioSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolIntermediarioSDT.Item">
+        <all>
+          <element name="IntTip" type="xsd:byte"></element>
+          <element name="Int1Cod" type="xsd:int"></element>
+          <element name="OpGstAdq" type="xsd:double"></element>
+          <element name="OpGstExp" type="xsd:double"></element>
+          <element name="OpComPorCom" type="xsd:float"></element>
+        </all>
+      </complexType>
+      <complexType name="wscolTomadorSDT">
+        <all>
+          <element name="DatoFiliatorio" type="tns3:colemiDatoFiliatorioSDT"></element>
+          <element name="CimCod_IVA" type="xsd:string"></element>
+          <element name="IimCod_IVA" type="xsd:string"></element>
+          <element name="CimCod_IB" type="xsd:string"></element>
+          <element name="IimCod_IB" type="xsd:string"></element>
+          <element name="CimCod_S" type="xsd:string"></element>
+          <element name="IimCod_S" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="wscolSegmentosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolSegmentosSDT.Item" type="tns3:wscolSegmentosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolSegmentosSDT.Item">
+        <all>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="PrfCod" type="xsd:int"></element>
+          <element name="BasSecCantPersonas" type="xsd:int"></element>
+          <element name="SumaAsegBase" type="xsd:double"></element>
+        </all>
+      </complexType>
+      <complexType name="wscolVehiculosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolVehiculosSDT.Item" type="tns3:wscolVehiculosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolVehiculosSDT.Item">
+        <all>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="MarCod_Info" type="xsd:string"></element>
+          <element name="ModCod_Info" type="xsd:string"></element>
+          <element name="VehAnio" type="xsd:short"></element>
+          <element name="Veh0KM" type="xsd:string"></element>
+          <element name="VehPate" type="xsd:string"></element>
+          <element name="VehMotor" type="xsd:string"></element>
+          <element name="VehChasis" type="xsd:string"></element>
+          <element name="UvhCod" type="xsd:short"></element>
+          <element name="SumaAsegBase" type="xsd:double"></element>
+        </all>
+      </complexType>
+      <complexType name="colemiAseguradosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolemiAseguradosSDT.Item" type="tns3:wscolemiAseguradosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolemiAseguradosSDT.Item">
+        <all>
+          <element name="DatoFiliatorio" type="tns3:colemiDatoFiliatorioSDT"></element>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="ParCod" type="xsd:short"></element>
+          <element name="CatCod" type="xsd:short"></element>
+          <element name="PrfCod" type="xsd:int"></element>
+          <element name="RaeCod" type="xsd:short"></element>
+          <element name="SumaAsegBase" type="xsd:double"></element>
+        </all>
+      </complexType>
+      <complexType name="wscolRiesgosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolRiesgosSDT.Item" type="tns3:wscolRiesgosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolRiesgosSDT.Item">
+        <all>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="DomicilioRiesgo" type="tns3:colDomicilioSDT"></element>
+          <element name="BasRgsDes" type="xsd:string"></element>
+          <element name="BasRgsAdic" type="xsd:string"></element>
+          <element name="BasRaeCod" type="xsd:short"></element>
+          <element name="SumaAsegBase" type="xsd:double"></element>
+        </all>
+      </complexType>
+      <complexType name="colCoberturasSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolCoberturasSDT.Item" type="tns3:wscolCoberturasSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolCoberturasSDT.Item">
+        <all>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="RamDes" type="xsd:string"></element>
+          <element name="RamCodSeg" type="xsd:string"></element>
+          <element name="TarCod" type="xsd:short"></element>
+          <element name="TarSec" type="xsd:int"></element>
+          <element name="PrdCod" type="xsd:short"></element>
+          <element name="PrdDes" type="xsd:string"></element>
+          <element name="RieCod" type="xsd:short"></element>
+          <element name="RieDes" type="xsd:string"></element>
+          <element name="CobCod" type="xsd:short"></element>
+          <element name="CobDes" type="xsd:string"></element>
+          <element name="TipoCobertura" type="xsd:string"></element>
+          <element name="GrupoCobertura" type="xsd:string"></element>
+          <element name="Padre" type="xsd:short"></element>
+          <element name="Hija" type="xsd:short"></element>
+          <element name="PreEsp" type="xsd:double"></element>
+          <element name="CapCal" type="xsd:byte"></element>
+          <element name="CapMin" type="xsd:double"></element>
+          <element name="CapMax" type="xsd:double"></element>
+          <element name="CapPrf" type="xsd:double"></element>
+          <element name="CapPorcMin" type="xsd:float"></element>
+          <element name="CapPorcMax" type="xsd:float"></element>
+          <element name="CapPorcPrf" type="xsd:float"></element>
+          <element name="PormPrima" type="xsd:double"></element>
+          <element name="Seleccion" type="xsd:byte"></element>
+          <element name="RcpOrdGrd" type="xsd:string"></element>
+          <element name="MarcaSumaAsegBase" type="xsd:string"></element>
+          <element name="CatCod" type="xsd:short"></element>
+          <element name="CatDes" type="xsd:string"></element>
+          <element name="CatDesCor" type="xsd:string"></element>
+          <element name="ParCod" type="xsd:short"></element>
+          <element name="ParDes" type="xsd:string"></element>
+          <element name="ClsCod" type="xsd:int"></element>
+          <element name="TclCod" type="xsd:short"></element>
+          <element name="TopeEdadMin" type="xsd:short"></element>
+          <element name="TopeEdadMax" type="xsd:short"></element>
+          <element name="PftCod" type="xsd:short"></element>
+        </all>
+      </complexType>
+      <complexType name="colAdicionalesSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolAdicionalesSDT.Item" type="tns3:wscolAdicionalesSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolAdicionalesSDT.Item">
+        <all>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="RieCod" type="xsd:short"></element>
+          <element name="CobCod" type="xsd:short"></element>
+          <element name="AccCod" type="xsd:short"></element>
+          <element name="AccDes" type="xsd:string"></element>
+          <element name="AccValAseg" type="xsd:double"></element>
+          <element name="AccValPorc" type="xsd:float"></element>
+          <element name="AccDatAdSec" type="xsd:short"></element>
+          <element name="AccDatAdDes" type="xsd:string"></element>
+          <element name="AccValor" type="xsd:string"></element>
+          <element name="AccCampCod" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="wscolAjustesTecnicosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolAjustesTecnicosSDT.Item" type="tns3:wscolAjustesTecnicosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolAjustesTecnicosSDT.Item">
+        <all>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="AjTcCod" type="xsd:short"></element>
+          <element name="AjTcPReal" type="xsd:float"></element>
+        </all>
+      </complexType>
+      <complexType name="colAjustesComercialesSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolAjustesComercialesSDT.Item" type="tns3:wscolAjustesComercialesSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolAjustesComercialesSDT.Item">
+        <all>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="AjComCod" type="xsd:short"></element>
+          <element name="AjComPReal" type="xsd:float"></element>
+        </all>
+      </complexType>
+      <complexType name="colBeneficiariosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolBeneficiariosSDT.Item" type="tns3:wscolBeneficiariosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolBeneficiariosSDT.Item">
+        <all>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="BenefNom" type="xsd:string"></element>
+          <element name="BenefDNI" type="xsd:int"></element>
+          <element name="BenefPorc" type="xsd:float"></element>
+        </all>
+      </complexType>
+      <complexType name="wscolReferenciasSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolReferenciasSDT.Item" type="tns3:wscolReferenciasSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolReferenciasSDT.Item">
+        <all>
+          <element name="SupRefCod" type="xsd:string"></element>
+          <element name="SupRefVal" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="colExpedientesSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolExpedientesSDT.Item" type="tns3:wscolExpedientesSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolExpedientesSDT.Item">
+        <all>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="PocoNum" type="xsd:int"></element>
+          <element name="Nombre" type="xsd:string"></element>
+          <element name="Extension" type="xsd:string"></element>
+          <element name="Observaciones" type="xsd:string"></element>
+          <element name="ArchivoBase64" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="colMedioPagoSDT">
+        <all>
+          <element name="MpgCod" type="xsd:byte"></element>
+          <element name="TcrCod" type="xsd:short"></element>
+          <element name="TcrNum" type="xsd:long"></element>
+          <element name="TcrTitular" type="xsd:string"></element>
+          <element name="DafTMesHas" type="xsd:byte"></element>
+          <element name="DafTAnoHas" type="xsd:short"></element>
+          <element name="BcoCod" type="xsd:short"></element>
+          <element name="BsuCod" type="xsd:short"></element>
+          <element name="BcoCtaCod" type="xsd:byte"></element>
+          <element name="BcoNumCta" type="xsd:long"></element>
+          <element name="CBU" type="xsd:string"></element>
+          <element name="CobIntTip" type="xsd:byte"></element>
+          <element name="CobInt1Cod" type="xsd:int"></element>
+          <element name="ProvDafCod" type="xsd:int"></element>
+        </all>
+      </complexType>
+      <complexType name="colemiDatoFiliatorioSDT">
+        <all>
+          <element name="DafCod" type="xsd:int"></element>
+          <element name="TdfCod" type="xsd:string"></element>
+          <element name="DafPfNomb" type="xsd:string"></element>
+          <element name="DafPfApel" type="xsd:string"></element>
+          <element name="DafPjNombLar" type="xsd:string"></element>
+          <element name="DafPfFecNac" type="xsd:date"></element>
+          <element name="SexCod" type="xsd:string"></element>
+          <element name="ModoTrn" type="xsd:string"></element>
+          <element name="DafPEP" type="xsd:string"></element>
+          <element name="CiiuCod" type="xsd:int"></element>
+          <element name="PaiCod" type="xsd:short"></element>
+          <element name="PaiDes" type="xsd:string"></element>
+          <element name="DafPfZurdo" type="xsd:string"></element>
+          <element name="DafPfFumador" type="xsd:string"></element>
+          <element name="Documentos" type="tns3:colDocumentosSDT"></element>
+          <element name="Domicilios" type="tns3:colDomicilioSDT"></element>
+          <element name="Emails" type="tns3:colEmailsSDT"></element>
+          <element name="Telefonos" type="tns3:colTelefonosSDT"></element>
+        </all>
+      </complexType>
+      <complexType name="colDomicilioSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolDomiciliosSDT.Item" type="tns3:wscolDomiciliosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolDomiciliosSDT.Item">
+        <all>
+          <element name="DomCod" type="xsd:short"></element>
+          <element name="DafDom" type="xsd:string"></element>
+          <element name="DafDomNro" type="xsd:string"></element>
+          <element name="DafDomPis" type="xsd:string"></element>
+          <element name="DafDomDpt" type="xsd:string"></element>
+          <element name="DafBarrio" type="xsd:string"></element>
+          <element name="DafDomPrf" type="xsd:string"></element>
+          <element name="DafPaiCod" type="xsd:short"></element>
+          <element name="DafProCod" type="xsd:short"></element>
+          <element name="DafLocCod" type="xsd:int"></element>
+          <element name="LocCopo" type="xsd:short"></element>
+          <element name="DafCorresp" type="xsd:string"></element>
+          <element name="DafFiscal" type="xsd:string"></element>
+          <element name="DafDomCorrespEnv" type="xsd:string"></element>
+          <element name="DafDomSec" type="xsd:short"></element>
+        </all>
+      </complexType>
+      <complexType name="colDocumentosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolDocumentosSDT.Item" type="tns3:wscolDocumentosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolDocumentosSDT.Item">
+        <all>
+          <element name="TdoCod" type="xsd:string"></element>
+          <element name="DafTdoNum" type="xsd:long"></element>
+          <element name="DafTdoExp" type="xsd:string"></element>
+          <element name="DafTdoPrf" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="colEmailsSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolEmailsSDT.Item" type="tns3:wscolEmailsSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolEmailsSDT.Item">
+        <all>
+          <element name="MailCod" type="xsd:short"></element>
+          <element name="DafMailSec" type="xsd:short"></element>
+          <element name="MailDes" type="xsd:string"></element>
+          <element name="MailDirec" type="xsd:string"></element>
+          <element name="DafMailPrf" type="xsd:string"></element>
+          <element name="DafMailEmi" type="xsd:string"></element>
+          <element name="DafMailCob" type="xsd:string"></element>
+          <element name="DafMailSin" type="xsd:string"></element>
+          <element name="DafMailNotPed" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="colTelefonosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolTelefonosSDT.Item" type="tns3:wscolTelefonosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolTelefonosSDT.Item">
+        <all>
+          <element name="TelCod" type="xsd:short"></element>
+          <element name="DafTelSec" type="xsd:short"></element>
+          <element name="TelDes" type="xsd:string"></element>
+          <element name="DafPaiTelCod" type="xsd:string"></element>
+          <element name="DafLocTelCod" type="xsd:string"></element>
+          <element name="DafTelNum" type="xsd:long"></element>
+          <element name="DatTelPrf" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="COLONCotEmision_Res">
+        <all>
+          <element name="CotizacionEmisionSDT" type="tns3:wscolCotizacionEmisionSDT"></element>
+          <element name="CodError" type="xsd:short"></element>
+          <element name="DesError" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <complexType name="wscolCotizacionEmisionSDT">
+        <all>
+          <element name="NroCotizacion" type="xsd:int"></element>
+          <element name="NroCotizacionPortal" type="xsd:int"></element>
+          <element name="EmpCod" type="xsd:string"></element>
+          <element name="SucCod" type="xsd:string"></element>
+          <element name="ArtCod" type="xsd:int"></element>
+          <element name="SpolNum" type="xsd:int"></element>
+          <element name="SpolNumRef" type="xsd:int"></element>
+          <element name="PlazoSeguro" type="xsd:short"></element>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="CertNum" type="xsd:int"></element>
+          <element name="PolNum" type="xsd:int"></element>
+          <element name="EndNum" type="xsd:int"></element>
+          <element name="TipOpCod" type="xsd:byte"></element>
+          <element name="TipOpSt" type="xsd:byte"></element>
+          <element name="OpDetFecEmi" type="xsd:date"></element>
+          <element name="OpFecIniVig" type="xsd:date"></element>
+          <element name="OpFecFinVig" type="xsd:date"></element>
+          <element name="OpDetFecHasFac" type="xsd:date"></element>
+          <element name="OpeDafCod" type="xsd:int"></element>
+          <element name="SumaAsegurada" type="xsd:double"></element>
+          <element name="ImporteCuota" type="xsd:double"></element>
+          <element name="Prima" type="xsd:double"></element>
+          <element name="PrimaTecnica" type="xsd:double"></element>
+          <element name="PrimaTarifa" type="xsd:double"></element>
+          <element name="PrimaComercial" type="xsd:double"></element>
+          <element name="SubtotalPrima" type="xsd:double"></element>
+          <element name="Premio" type="xsd:double"></element>
+          <element name="CapitalAsegurado" type="xsd:double"></element>
+          <element name="FechaAlta" type="xsd:date"></element>
+          <element name="FechaInicioVigencia" type="xsd:date"></element>
+          <element name="FechaFinVigencia" type="xsd:date"></element>
+          <element name="FechaCuota" type="xsd:date"></element>
+          <element name="FechaVencPrendario" type="xsd:date"></element>
+          <element name="Coberturas" type="tns3:colCoberturasSDT"></element>
+          <element name="AjustesTecnicos" type="tns3:wscolAjustesTecnicosSDT"></element>
+          <element name="AjustesComerciales" type="tns3:colAjustesComercialesSDT"></element>
+          <element name="Recargos" type="tns3:colRecargosSDT"></element>
+          <element name="Impuestos" type="tns3:colImpuestosSDT"></element>
+        </all>
+      </complexType>
+      <complexType name="colRecargosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolRecargosSDT.Item" type="tns3:wscolRecargosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolRecargosSDT.Item">
+        <all>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="RecCod" type="xsd:short"></element>
+          <element name="RecDes" type="xsd:string"></element>
+          <element name="RecBasCalc" type="xsd:double"></element>
+          <element name="RecPrima" type="xsd:double"></element>
+          <element name="RecPReal" type="xsd:float"></element>
+          <element name="RecIReal" type="xsd:double"></element>
+        </all>
+      </complexType>
+      <complexType name="colImpuestosSDT">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="wscolImpuestosSDT.Item" type="tns3:wscolImpuestosSDT.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="wscolImpuestosSDT.Item">
+        <all>
+          <element name="RamCod" type="xsd:short"></element>
+          <element name="ImpCod" type="xsd:string"></element>
+          <element name="ImpDes" type="xsd:string"></element>
+          <element name="ImpLocCod" type="xsd:int"></element>
+          <element name="ImpProCod" type="xsd:short"></element>
+          <element name="ImpPaiCod" type="xsd:short"></element>
+          <element name="ImpPrimCalc" type="xsd:double"></element>
+          <element name="ImpPorcApl" type="xsd:float"></element>
+          <element name="ImpBaseCalc" type="xsd:double"></element>
+          <element name="CimCod" type="xsd:string"></element>
+          <element name="IImCod" type="xsd:string"></element>
+        </all>
+      </complexType>
+      <element name="Colon_WS_CotEmision.Execute">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="Request" type="tns3:COLONCotEmision_Req"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Colon_WS_CotEmision.ExecuteResponse">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="Response" type="tns3:COLONCotEmision_Res"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="Colon_WS_CotEmision.ExecuteSoapIn">
+    <part name="parameters" element="tns:Colon_WS_CotEmision.Execute"/>
+  </message>
+  <message name="Colon_WS_CotEmision.ExecuteSoapOut">
+    <part name="parameters" element="tns:Colon_WS_CotEmision.ExecuteResponse"/>
+  </message>
+  <portType name="Colon_WS_CotEmisionSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:Colon_WS_CotEmision.ExecuteSoapIn"/>
+      <output message="wsdlns:Colon_WS_CotEmision.ExecuteSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="Colon_WS_CotEmisionSoapBinding" type="wsdlns:Colon_WS_CotEmisionSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Execute">
+      <soap:operation soapAction="GAUSmpaction/ACOLON_WS_COTEMISION.Execute"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Colon_WS_CotEmision">
+    <port name="Colon_WS_CotEmisionSoapPort" binding="wsdlns:Colon_WS_CotEmisionSoapBinding">
+      <soap:address location="http://gaustest.colonseguros.com.ar/gausmpcolontest/servlet/acolon_ws_cotemision"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://admin:8088/mockColon_WS_CotEmisionSoapBinding</con:endpoint><con:endpoint>http://gaustest.colonseguros.com.ar/gausmpcolontest/servlet/acolon_ws_cotemision</con:endpoint></con:endpoints><con:operation id="4abd6353-d072-4905-9605-4ffe0df5e4e1" isOneWay="false" action="GAUSmpaction/ACOLON_WS_COTEMISION.Execute" name="Execute" bindingOperationName="Execute" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="03d1a9c8-5d78-467f-89bc-07da5161f184" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://admin:8088/mockColon_WS_CotEmisionSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gaus="GAUSmp">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gaus:Colon_WS_CotEmision.Execute>
+         <gaus:Request>
+            <!--You may enter the following 32 items in any order-->
+            <gaus:CnlComExtCod>?</gaus:CnlComExtCod>
+            <gaus:CnlSubComExtCod>?</gaus:CnlSubComExtCod>
+            <gaus:CnlComLinEmi>?</gaus:CnlComLinEmi>
+            <gaus:EsCotizacion>?</gaus:EsCotizacion>
+            <gaus:CnlComOpeDes>?</gaus:CnlComOpeDes>
+            <gaus:NroCotizacion>?</gaus:NroCotizacion>
+            <gaus:NroCotizacionPortal>?</gaus:NroCotizacionPortal>
+            <gaus:MonCod>?</gaus:MonCod>
+            <gaus:OpFecIniVig>?</gaus:OpFecIniVig>
+            <gaus:OpFecFinVig>?</gaus:OpFecFinVig>
+            <gaus:ArtDupFac>?</gaus:ArtDupFac>
+            <gaus:ArtDupPol>?</gaus:ArtDupPol>
+            <gaus:PpgCod>?</gaus:PpgCod>
+            <gaus:CobroAlta>?</gaus:CobroAlta>
+            <gaus:LinNegCod>?</gaus:LinNegCod>
+            <gaus:ConvNegCod>?</gaus:ConvNegCod>
+            <gaus:ArtDupPolTipRen>?</gaus:ArtDupPolTipRen>
+            <gaus:TextoUsuario>?</gaus:TextoUsuario>
+            <gaus:IntermediarioSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolIntermediarioSDT.Item>
+                  <!--You may enter the following 5 items in any order-->
+                  <gaus:IntTip>?</gaus:IntTip>
+                  <gaus:Int1Cod>?</gaus:Int1Cod>
+                  <gaus:OpGstAdq>?</gaus:OpGstAdq>
+                  <gaus:OpGstExp>?</gaus:OpGstExp>
+                  <gaus:OpComPorCom>?</gaus:OpComPorCom>
+               </gaus:wscolIntermediarioSDT.Item>
+            </gaus:IntermediarioSDT>
+            <gaus:TomadorSDT>
+               <!--You may enter the following 7 items in any order-->
+               <gaus:DatoFiliatorio>
+                  <!--You may enter the following 18 items in any order-->
+                  <gaus:DafCod>?</gaus:DafCod>
+                  <gaus:TdfCod>?</gaus:TdfCod>
+                  <gaus:DafPfNomb>?</gaus:DafPfNomb>
+                  <gaus:DafPfApel>?</gaus:DafPfApel>
+                  <gaus:DafPjNombLar>?</gaus:DafPjNombLar>
+                  <gaus:DafPfFecNac>?</gaus:DafPfFecNac>
+                  <gaus:SexCod>?</gaus:SexCod>
+                  <gaus:ModoTrn>?</gaus:ModoTrn>
+                  <gaus:DafPEP>?</gaus:DafPEP>
+                  <gaus:CiiuCod>?</gaus:CiiuCod>
+                  <gaus:PaiCod>?</gaus:PaiCod>
+                  <gaus:PaiDes>?</gaus:PaiDes>
+                  <gaus:DafPfZurdo>?</gaus:DafPfZurdo>
+                  <gaus:DafPfFumador>?</gaus:DafPfFumador>
+                  <gaus:Documentos>
+                     <!--Zero or more repetitions:-->
+                     <gaus:wscolDocumentosSDT.Item>
+                        <!--You may enter the following 4 items in any order-->
+                        <gaus:TdoCod>?</gaus:TdoCod>
+                        <gaus:DafTdoNum>?</gaus:DafTdoNum>
+                        <gaus:DafTdoExp>?</gaus:DafTdoExp>
+                        <gaus:DafTdoPrf>?</gaus:DafTdoPrf>
+                     </gaus:wscolDocumentosSDT.Item>
+                  </gaus:Documentos>
+                  <gaus:Domicilios>
+                     <!--Zero or more repetitions:-->
+                     <gaus:wscolDomiciliosSDT.Item>
+                        <!--You may enter the following 15 items in any order-->
+                        <gaus:DomCod>?</gaus:DomCod>
+                        <gaus:DafDom>?</gaus:DafDom>
+                        <gaus:DafDomNro>?</gaus:DafDomNro>
+                        <gaus:DafDomPis>?</gaus:DafDomPis>
+                        <gaus:DafDomDpt>?</gaus:DafDomDpt>
+                        <gaus:DafBarrio>?</gaus:DafBarrio>
+                        <gaus:DafDomPrf>?</gaus:DafDomPrf>
+                        <gaus:DafPaiCod>?</gaus:DafPaiCod>
+                        <gaus:DafProCod>?</gaus:DafProCod>
+                        <gaus:DafLocCod>?</gaus:DafLocCod>
+                        <gaus:LocCopo>?</gaus:LocCopo>
+                        <gaus:DafCorresp>?</gaus:DafCorresp>
+                        <gaus:DafFiscal>?</gaus:DafFiscal>
+                        <gaus:DafDomCorrespEnv>?</gaus:DafDomCorrespEnv>
+                        <gaus:DafDomSec>?</gaus:DafDomSec>
+                     </gaus:wscolDomiciliosSDT.Item>
+                  </gaus:Domicilios>
+                  <gaus:Emails>
+                     <!--Zero or more repetitions:-->
+                     <gaus:wscolEmailsSDT.Item>
+                        <!--You may enter the following 9 items in any order-->
+                        <gaus:MailCod>?</gaus:MailCod>
+                        <gaus:DafMailSec>?</gaus:DafMailSec>
+                        <gaus:MailDes>?</gaus:MailDes>
+                        <gaus:MailDirec>?</gaus:MailDirec>
+                        <gaus:DafMailPrf>?</gaus:DafMailPrf>
+                        <gaus:DafMailEmi>?</gaus:DafMailEmi>
+                        <gaus:DafMailCob>?</gaus:DafMailCob>
+                        <gaus:DafMailSin>?</gaus:DafMailSin>
+                        <gaus:DafMailNotPed>?</gaus:DafMailNotPed>
+                     </gaus:wscolEmailsSDT.Item>
+                  </gaus:Emails>
+                  <gaus:Telefonos>
+                     <!--Zero or more repetitions:-->
+                     <gaus:wscolTelefonosSDT.Item>
+                        <!--You may enter the following 7 items in any order-->
+                        <gaus:TelCod>?</gaus:TelCod>
+                        <gaus:DafTelSec>?</gaus:DafTelSec>
+                        <gaus:TelDes>?</gaus:TelDes>
+                        <gaus:DafPaiTelCod>?</gaus:DafPaiTelCod>
+                        <gaus:DafLocTelCod>?</gaus:DafLocTelCod>
+                        <gaus:DafTelNum>?</gaus:DafTelNum>
+                        <gaus:DatTelPrf>?</gaus:DatTelPrf>
+                     </gaus:wscolTelefonosSDT.Item>
+                  </gaus:Telefonos>
+               </gaus:DatoFiliatorio>
+               <gaus:CimCod_IVA>?</gaus:CimCod_IVA>
+               <gaus:IimCod_IVA>?</gaus:IimCod_IVA>
+               <gaus:CimCod_IB>?</gaus:CimCod_IB>
+               <gaus:IimCod_IB>?</gaus:IimCod_IB>
+               <gaus:CimCod_S>?</gaus:CimCod_S>
+               <gaus:IimCod_S>?</gaus:IimCod_S>
+            </gaus:TomadorSDT>
+            <gaus:SegmentosSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolSegmentosSDT.Item>
+                  <!--You may enter the following 4 items in any order-->
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:PrfCod>?</gaus:PrfCod>
+                  <gaus:BasSecCantPersonas>?</gaus:BasSecCantPersonas>
+                  <gaus:SumaAsegBase>?</gaus:SumaAsegBase>
+               </gaus:wscolSegmentosSDT.Item>
+            </gaus:SegmentosSDT>
+            <gaus:VehiculosSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolVehiculosSDT.Item>
+                  <!--You may enter the following 10 items in any order-->
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:MarCod_Info>?</gaus:MarCod_Info>
+                  <gaus:ModCod_Info>?</gaus:ModCod_Info>
+                  <gaus:VehAnio>?</gaus:VehAnio>
+                  <gaus:Veh0KM>?</gaus:Veh0KM>
+                  <gaus:VehPate>?</gaus:VehPate>
+                  <gaus:VehMotor>?</gaus:VehMotor>
+                  <gaus:VehChasis>?</gaus:VehChasis>
+                  <gaus:UvhCod>?</gaus:UvhCod>
+                  <gaus:SumaAsegBase>?</gaus:SumaAsegBase>
+               </gaus:wscolVehiculosSDT.Item>
+            </gaus:VehiculosSDT>
+            <gaus:AseguradosSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolemiAseguradosSDT.Item>
+                  <!--You may enter the following 7 items in any order-->
+                  <gaus:DatoFiliatorio>
+                     <!--You may enter the following 18 items in any order-->
+                     <gaus:DafCod>?</gaus:DafCod>
+                     <gaus:TdfCod>?</gaus:TdfCod>
+                     <gaus:DafPfNomb>?</gaus:DafPfNomb>
+                     <gaus:DafPfApel>?</gaus:DafPfApel>
+                     <gaus:DafPjNombLar>?</gaus:DafPjNombLar>
+                     <gaus:DafPfFecNac>?</gaus:DafPfFecNac>
+                     <gaus:SexCod>?</gaus:SexCod>
+                     <gaus:ModoTrn>?</gaus:ModoTrn>
+                     <gaus:DafPEP>?</gaus:DafPEP>
+                     <gaus:CiiuCod>?</gaus:CiiuCod>
+                     <gaus:PaiCod>?</gaus:PaiCod>
+                     <gaus:PaiDes>?</gaus:PaiDes>
+                     <gaus:DafPfZurdo>?</gaus:DafPfZurdo>
+                     <gaus:DafPfFumador>?</gaus:DafPfFumador>
+                     <gaus:Documentos>
+                        <!--Zero or more repetitions:-->
+                        <gaus:wscolDocumentosSDT.Item>
+                           <!--You may enter the following 4 items in any order-->
+                           <gaus:TdoCod>?</gaus:TdoCod>
+                           <gaus:DafTdoNum>?</gaus:DafTdoNum>
+                           <gaus:DafTdoExp>?</gaus:DafTdoExp>
+                           <gaus:DafTdoPrf>?</gaus:DafTdoPrf>
+                        </gaus:wscolDocumentosSDT.Item>
+                     </gaus:Documentos>
+                     <gaus:Domicilios>
+                        <!--Zero or more repetitions:-->
+                        <gaus:wscolDomiciliosSDT.Item>
+                           <!--You may enter the following 15 items in any order-->
+                           <gaus:DomCod>?</gaus:DomCod>
+                           <gaus:DafDom>?</gaus:DafDom>
+                           <gaus:DafDomNro>?</gaus:DafDomNro>
+                           <gaus:DafDomPis>?</gaus:DafDomPis>
+                           <gaus:DafDomDpt>?</gaus:DafDomDpt>
+                           <gaus:DafBarrio>?</gaus:DafBarrio>
+                           <gaus:DafDomPrf>?</gaus:DafDomPrf>
+                           <gaus:DafPaiCod>?</gaus:DafPaiCod>
+                           <gaus:DafProCod>?</gaus:DafProCod>
+                           <gaus:DafLocCod>?</gaus:DafLocCod>
+                           <gaus:LocCopo>?</gaus:LocCopo>
+                           <gaus:DafCorresp>?</gaus:DafCorresp>
+                           <gaus:DafFiscal>?</gaus:DafFiscal>
+                           <gaus:DafDomCorrespEnv>?</gaus:DafDomCorrespEnv>
+                           <gaus:DafDomSec>?</gaus:DafDomSec>
+                        </gaus:wscolDomiciliosSDT.Item>
+                     </gaus:Domicilios>
+                     <gaus:Emails>
+                        <!--Zero or more repetitions:-->
+                        <gaus:wscolEmailsSDT.Item>
+                           <!--You may enter the following 9 items in any order-->
+                           <gaus:MailCod>?</gaus:MailCod>
+                           <gaus:DafMailSec>?</gaus:DafMailSec>
+                           <gaus:MailDes>?</gaus:MailDes>
+                           <gaus:MailDirec>?</gaus:MailDirec>
+                           <gaus:DafMailPrf>?</gaus:DafMailPrf>
+                           <gaus:DafMailEmi>?</gaus:DafMailEmi>
+                           <gaus:DafMailCob>?</gaus:DafMailCob>
+                           <gaus:DafMailSin>?</gaus:DafMailSin>
+                           <gaus:DafMailNotPed>?</gaus:DafMailNotPed>
+                        </gaus:wscolEmailsSDT.Item>
+                     </gaus:Emails>
+                     <gaus:Telefonos>
+                        <!--Zero or more repetitions:-->
+                        <gaus:wscolTelefonosSDT.Item>
+                           <!--You may enter the following 7 items in any order-->
+                           <gaus:TelCod>?</gaus:TelCod>
+                           <gaus:DafTelSec>?</gaus:DafTelSec>
+                           <gaus:TelDes>?</gaus:TelDes>
+                           <gaus:DafPaiTelCod>?</gaus:DafPaiTelCod>
+                           <gaus:DafLocTelCod>?</gaus:DafLocTelCod>
+                           <gaus:DafTelNum>?</gaus:DafTelNum>
+                           <gaus:DatTelPrf>?</gaus:DatTelPrf>
+                        </gaus:wscolTelefonosSDT.Item>
+                     </gaus:Telefonos>
+                  </gaus:DatoFiliatorio>
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:ParCod>?</gaus:ParCod>
+                  <gaus:CatCod>?</gaus:CatCod>
+                  <gaus:PrfCod>?</gaus:PrfCod>
+                  <gaus:RaeCod>?</gaus:RaeCod>
+                  <gaus:SumaAsegBase>?</gaus:SumaAsegBase>
+               </gaus:wscolemiAseguradosSDT.Item>
+            </gaus:AseguradosSDT>
+            <gaus:RiesgosSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolRiesgosSDT.Item>
+                  <!--You may enter the following 6 items in any order-->
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:DomicilioRiesgo>
+                     <!--Zero or more repetitions:-->
+                     <gaus:wscolDomiciliosSDT.Item>
+                        <!--You may enter the following 15 items in any order-->
+                        <gaus:DomCod>?</gaus:DomCod>
+                        <gaus:DafDom>?</gaus:DafDom>
+                        <gaus:DafDomNro>?</gaus:DafDomNro>
+                        <gaus:DafDomPis>?</gaus:DafDomPis>
+                        <gaus:DafDomDpt>?</gaus:DafDomDpt>
+                        <gaus:DafBarrio>?</gaus:DafBarrio>
+                        <gaus:DafDomPrf>?</gaus:DafDomPrf>
+                        <gaus:DafPaiCod>?</gaus:DafPaiCod>
+                        <gaus:DafProCod>?</gaus:DafProCod>
+                        <gaus:DafLocCod>?</gaus:DafLocCod>
+                        <gaus:LocCopo>?</gaus:LocCopo>
+                        <gaus:DafCorresp>?</gaus:DafCorresp>
+                        <gaus:DafFiscal>?</gaus:DafFiscal>
+                        <gaus:DafDomCorrespEnv>?</gaus:DafDomCorrespEnv>
+                        <gaus:DafDomSec>?</gaus:DafDomSec>
+                     </gaus:wscolDomiciliosSDT.Item>
+                  </gaus:DomicilioRiesgo>
+                  <gaus:BasRgsDes>?</gaus:BasRgsDes>
+                  <gaus:BasRgsAdic>?</gaus:BasRgsAdic>
+                  <gaus:BasRaeCod>?</gaus:BasRaeCod>
+                  <gaus:SumaAsegBase>?</gaus:SumaAsegBase>
+               </gaus:wscolRiesgosSDT.Item>
+            </gaus:RiesgosSDT>
+            <gaus:CoberturasSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolCoberturasSDT.Item>
+                  <!--You may enter the following 38 items in any order-->
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:RamCod>?</gaus:RamCod>
+                  <gaus:RamDes>?</gaus:RamDes>
+                  <gaus:RamCodSeg>?</gaus:RamCodSeg>
+                  <gaus:TarCod>?</gaus:TarCod>
+                  <gaus:TarSec>?</gaus:TarSec>
+                  <gaus:PrdCod>?</gaus:PrdCod>
+                  <gaus:PrdDes>?</gaus:PrdDes>
+                  <gaus:RieCod>?</gaus:RieCod>
+                  <gaus:RieDes>?</gaus:RieDes>
+                  <gaus:CobCod>?</gaus:CobCod>
+                  <gaus:CobDes>?</gaus:CobDes>
+                  <gaus:TipoCobertura>?</gaus:TipoCobertura>
+                  <gaus:GrupoCobertura>?</gaus:GrupoCobertura>
+                  <gaus:Padre>?</gaus:Padre>
+                  <gaus:Hija>?</gaus:Hija>
+                  <gaus:PreEsp>?</gaus:PreEsp>
+                  <gaus:CapCal>?</gaus:CapCal>
+                  <gaus:CapMin>?</gaus:CapMin>
+                  <gaus:CapMax>?</gaus:CapMax>
+                  <gaus:CapPrf>?</gaus:CapPrf>
+                  <gaus:CapPorcMin>?</gaus:CapPorcMin>
+                  <gaus:CapPorcMax>?</gaus:CapPorcMax>
+                  <gaus:CapPorcPrf>?</gaus:CapPorcPrf>
+                  <gaus:PormPrima>?</gaus:PormPrima>
+                  <gaus:Seleccion>?</gaus:Seleccion>
+                  <gaus:RcpOrdGrd>?</gaus:RcpOrdGrd>
+                  <gaus:MarcaSumaAsegBase>?</gaus:MarcaSumaAsegBase>
+                  <gaus:CatCod>?</gaus:CatCod>
+                  <gaus:CatDes>?</gaus:CatDes>
+                  <gaus:CatDesCor>?</gaus:CatDesCor>
+                  <gaus:ParCod>?</gaus:ParCod>
+                  <gaus:ParDes>?</gaus:ParDes>
+                  <gaus:ClsCod>?</gaus:ClsCod>
+                  <gaus:TclCod>?</gaus:TclCod>
+                  <gaus:TopeEdadMin>?</gaus:TopeEdadMin>
+                  <gaus:TopeEdadMax>?</gaus:TopeEdadMax>
+                  <gaus:PftCod>?</gaus:PftCod>
+               </gaus:wscolCoberturasSDT.Item>
+            </gaus:CoberturasSDT>
+            <gaus:AdicionalesSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolAdicionalesSDT.Item>
+                  <!--You may enter the following 12 items in any order-->
+                  <gaus:RamCod>?</gaus:RamCod>
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:RieCod>?</gaus:RieCod>
+                  <gaus:CobCod>?</gaus:CobCod>
+                  <gaus:AccCod>?</gaus:AccCod>
+                  <gaus:AccDes>?</gaus:AccDes>
+                  <gaus:AccValAseg>?</gaus:AccValAseg>
+                  <gaus:AccValPorc>?</gaus:AccValPorc>
+                  <gaus:AccDatAdSec>?</gaus:AccDatAdSec>
+                  <gaus:AccDatAdDes>?</gaus:AccDatAdDes>
+                  <gaus:AccValor>?</gaus:AccValor>
+                  <gaus:AccCampCod>?</gaus:AccCampCod>
+               </gaus:wscolAdicionalesSDT.Item>
+            </gaus:AdicionalesSDT>
+            <gaus:AjustesTecnicosSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolAjustesTecnicosSDT.Item>
+                  <!--You may enter the following 4 items in any order-->
+                  <gaus:RamCod>?</gaus:RamCod>
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:AjTcCod>?</gaus:AjTcCod>
+                  <gaus:AjTcPReal>?</gaus:AjTcPReal>
+               </gaus:wscolAjustesTecnicosSDT.Item>
+            </gaus:AjustesTecnicosSDT>
+            <gaus:AjustesComercialesSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolAjustesComercialesSDT.Item>
+                  <!--You may enter the following 3 items in any order-->
+                  <gaus:RamCod>?</gaus:RamCod>
+                  <gaus:AjComCod>?</gaus:AjComCod>
+                  <gaus:AjComPReal>?</gaus:AjComPReal>
+               </gaus:wscolAjustesComercialesSDT.Item>
+            </gaus:AjustesComercialesSDT>
+            <gaus:BeneficiariosSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolBeneficiariosSDT.Item>
+                  <!--You may enter the following 4 items in any order-->
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:BenefNom>?</gaus:BenefNom>
+                  <gaus:BenefDNI>?</gaus:BenefDNI>
+                  <gaus:BenefPorc>?</gaus:BenefPorc>
+               </gaus:wscolBeneficiariosSDT.Item>
+            </gaus:BeneficiariosSDT>
+            <gaus:ReferenciasSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolReferenciasSDT.Item>
+                  <!--You may enter the following 2 items in any order-->
+                  <gaus:SupRefCod>?</gaus:SupRefCod>
+                  <gaus:SupRefVal>?</gaus:SupRefVal>
+               </gaus:wscolReferenciasSDT.Item>
+            </gaus:ReferenciasSDT>
+            <gaus:DocumentosSDT>
+               <!--Zero or more repetitions:-->
+               <gaus:wscolExpedientesSDT.Item>
+                  <!--You may enter the following 6 items in any order-->
+                  <gaus:RamCod>?</gaus:RamCod>
+                  <gaus:PocoNum>?</gaus:PocoNum>
+                  <gaus:Nombre>?</gaus:Nombre>
+                  <gaus:Extension>?</gaus:Extension>
+                  <gaus:Observaciones>?</gaus:Observaciones>
+                  <gaus:ArchivoBase64>?</gaus:ArchivoBase64>
+               </gaus:wscolExpedientesSDT.Item>
+            </gaus:DocumentosSDT>
+            <gaus:MedioPagoSDT>
+               <!--You may enter the following 14 items in any order-->
+               <gaus:MpgCod>?</gaus:MpgCod>
+               <gaus:TcrCod>?</gaus:TcrCod>
+               <gaus:TcrNum>?</gaus:TcrNum>
+               <gaus:TcrTitular>?</gaus:TcrTitular>
+               <gaus:DafTMesHas>?</gaus:DafTMesHas>
+               <gaus:DafTAnoHas>?</gaus:DafTAnoHas>
+               <gaus:BcoCod>?</gaus:BcoCod>
+               <gaus:BsuCod>?</gaus:BsuCod>
+               <gaus:BcoCtaCod>?</gaus:BcoCtaCod>
+               <gaus:BcoNumCta>?</gaus:BcoNumCta>
+               <gaus:CBU>?</gaus:CBU>
+               <gaus:CobIntTip>?</gaus:CobIntTip>
+               <gaus:CobInt1Cod>?</gaus:CobInt1Cod>
+               <gaus:ProvDafCod>?</gaus:ProvDafCod>
+            </gaus:MedioPagoSDT>
+         </gaus:Request>
+      </gaus:Colon_WS_CotEmision.Execute>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GAUSmpaction/ACOLON_WS_COTEMISION.Execute"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="f687afd1-bd91-4685-b564-ba389522a932" port="8088" path="/mockColon_WS_CotEmisionSoapBinding" host="admin" name="Colon_WS_CotEmisionSoapBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="Execute" id="8b532ef8-cf6d-48ce-a15f-cafc8e840f18" interface="Colon_WS_CotEmisionSoapBinding" operation="Execute"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c843d64c-cc22-44f9-bc33-d7e11c54ec87" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gaus="GAUSmp">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gaus:Colon_WS_CotEmision.ExecuteResponse>
+         <gaus:Response>
+            <!--You may enter the following 3 items in any order-->
+            <gaus:CotizacionEmisionSDT>
+               <!--You may enter the following 38 items in any order-->
+               <gaus:NroCotizacion>?</gaus:NroCotizacion>
+               <gaus:NroCotizacionPortal>10</gaus:NroCotizacionPortal>
+               <gaus:EmpCod>10</gaus:EmpCod>
+               <gaus:SucCod>20</gaus:SucCod>
+               <gaus:ArtCod>?</gaus:ArtCod>
+               <gaus:SpolNum>?</gaus:SpolNum>
+               <gaus:SpolNumRef>?</gaus:SpolNumRef>
+               <gaus:PlazoSeguro>?</gaus:PlazoSeguro>
+               <gaus:RamCod>?</gaus:RamCod>
+               <gaus:CertNum>?</gaus:CertNum>
+               <gaus:PolNum>?</gaus:PolNum>
+               <gaus:EndNum>?</gaus:EndNum>
+               <gaus:TipOpCod>?</gaus:TipOpCod>
+               <gaus:TipOpSt>?</gaus:TipOpSt>
+               <gaus:OpDetFecEmi>?</gaus:OpDetFecEmi>
+               <gaus:OpFecIniVig>?</gaus:OpFecIniVig>
+               <gaus:OpFecFinVig>?</gaus:OpFecFinVig>
+               <gaus:OpDetFecHasFac>?</gaus:OpDetFecHasFac>
+               <gaus:OpeDafCod>?</gaus:OpeDafCod>
+               <gaus:SumaAsegurada>?</gaus:SumaAsegurada>
+               <gaus:ImporteCuota>?</gaus:ImporteCuota>
+               <gaus:Prima>?</gaus:Prima>
+               <gaus:PrimaTecnica>?</gaus:PrimaTecnica>
+               <gaus:PrimaTarifa>?</gaus:PrimaTarifa>
+               <gaus:PrimaComercial>?</gaus:PrimaComercial>
+               <gaus:SubtotalPrima>?</gaus:SubtotalPrima>
+               <gaus:Premio>?</gaus:Premio>
+               <gaus:CapitalAsegurado>?</gaus:CapitalAsegurado>
+               <gaus:FechaAlta>?</gaus:FechaAlta>
+               <gaus:FechaInicioVigencia>?</gaus:FechaInicioVigencia>
+               <gaus:FechaFinVigencia>?</gaus:FechaFinVigencia>
+               <gaus:FechaCuota>?</gaus:FechaCuota>
+               <gaus:FechaVencPrendario>?</gaus:FechaVencPrendario>
+               <gaus:Coberturas>
+                  <!--Zero or more repetitions:-->
+                  <gaus:wscolCoberturasSDT.Item>
+                     <!--You may enter the following 38 items in any order-->
+                     <gaus:PocoNum>?</gaus:PocoNum>
+                     <gaus:RamCod>?</gaus:RamCod>
+                     <gaus:RamDes>?</gaus:RamDes>
+                     <gaus:RamCodSeg>?</gaus:RamCodSeg>
+                     <gaus:TarCod>?</gaus:TarCod>
+                     <gaus:TarSec>?</gaus:TarSec>
+                     <gaus:PrdCod>?</gaus:PrdCod>
+                     <gaus:PrdDes>?</gaus:PrdDes>
+                     <gaus:RieCod>?</gaus:RieCod>
+                     <gaus:RieDes>?</gaus:RieDes>
+                     <gaus:CobCod>?</gaus:CobCod>
+                     <gaus:CobDes>?</gaus:CobDes>
+                     <gaus:TipoCobertura>?</gaus:TipoCobertura>
+                     <gaus:GrupoCobertura>?</gaus:GrupoCobertura>
+                     <gaus:Padre>?</gaus:Padre>
+                     <gaus:Hija>?</gaus:Hija>
+                     <gaus:PreEsp>?</gaus:PreEsp>
+                     <gaus:CapCal>?</gaus:CapCal>
+                     <gaus:CapMin>?</gaus:CapMin>
+                     <gaus:CapMax>?</gaus:CapMax>
+                     <gaus:CapPrf>?</gaus:CapPrf>
+                     <gaus:CapPorcMin>?</gaus:CapPorcMin>
+                     <gaus:CapPorcMax>?</gaus:CapPorcMax>
+                     <gaus:CapPorcPrf>?</gaus:CapPorcPrf>
+                     <gaus:PormPrima>?</gaus:PormPrima>
+                     <gaus:Seleccion>?</gaus:Seleccion>
+                     <gaus:RcpOrdGrd>?</gaus:RcpOrdGrd>
+                     <gaus:MarcaSumaAsegBase>?</gaus:MarcaSumaAsegBase>
+                     <gaus:CatCod>?</gaus:CatCod>
+                     <gaus:CatDes>?</gaus:CatDes>
+                     <gaus:CatDesCor>?</gaus:CatDesCor>
+                     <gaus:ParCod>?</gaus:ParCod>
+                     <gaus:ParDes>?</gaus:ParDes>
+                     <gaus:ClsCod>?</gaus:ClsCod>
+                     <gaus:TclCod>?</gaus:TclCod>
+                     <gaus:TopeEdadMin>?</gaus:TopeEdadMin>
+                     <gaus:TopeEdadMax>?</gaus:TopeEdadMax>
+                     <gaus:PftCod>?</gaus:PftCod>
+                  </gaus:wscolCoberturasSDT.Item>
+               </gaus:Coberturas>
+               <gaus:AjustesTecnicos>
+                  <!--Zero or more repetitions:-->
+                  <gaus:wscolAjustesTecnicosSDT.Item>
+                     <!--You may enter the following 4 items in any order-->
+                     <gaus:RamCod>?</gaus:RamCod>
+                     <gaus:PocoNum>?</gaus:PocoNum>
+                     <gaus:AjTcCod>?</gaus:AjTcCod>
+                     <gaus:AjTcPReal>?</gaus:AjTcPReal>
+                  </gaus:wscolAjustesTecnicosSDT.Item>
+               </gaus:AjustesTecnicos>
+               <gaus:AjustesComerciales>
+                  <!--Zero or more repetitions:-->
+                  <gaus:wscolAjustesComercialesSDT.Item>
+                     <!--You may enter the following 3 items in any order-->
+                     <gaus:RamCod>?</gaus:RamCod>
+                     <gaus:AjComCod>?</gaus:AjComCod>
+                     <gaus:AjComPReal>?</gaus:AjComPReal>
+                  </gaus:wscolAjustesComercialesSDT.Item>
+               </gaus:AjustesComerciales>
+               <gaus:Recargos>
+                  <!--Zero or more repetitions:-->
+                  <gaus:wscolRecargosSDT.Item>
+                     <!--You may enter the following 7 items in any order-->
+                     <gaus:RamCod>?</gaus:RamCod>
+                     <gaus:RecCod>?</gaus:RecCod>
+                     <gaus:RecDes>?</gaus:RecDes>
+                     <gaus:RecBasCalc>?</gaus:RecBasCalc>
+                     <gaus:RecPrima>?</gaus:RecPrima>
+                     <gaus:RecPReal>?</gaus:RecPReal>
+                     <gaus:RecIReal>?</gaus:RecIReal>
+                  </gaus:wscolRecargosSDT.Item>
+               </gaus:Recargos>
+               <gaus:Impuestos>
+                  <!--Zero or more repetitions:-->
+                  <gaus:wscolImpuestosSDT.Item>
+                     <!--You may enter the following 11 items in any order-->
+                     <gaus:RamCod>?</gaus:RamCod>
+                     <gaus:ImpCod>?</gaus:ImpCod>
+                     <gaus:ImpDes>?</gaus:ImpDes>
+                     <gaus:ImpLocCod>?</gaus:ImpLocCod>
+                     <gaus:ImpProCod>?</gaus:ImpProCod>
+                     <gaus:ImpPaiCod>?</gaus:ImpPaiCod>
+                     <gaus:ImpPrimCalc>?</gaus:ImpPrimCalc>
+                     <gaus:ImpPorcApl>?</gaus:ImpPorcApl>
+                     <gaus:ImpBaseCalc>?</gaus:ImpBaseCalc>
+                     <gaus:CimCod>?</gaus:CimCod>
+                     <gaus:IImCod>?</gaus:IImCod>
+                  </gaus:wscolImpuestosSDT.Item>
+               </gaus:Impuestos>
+            </gaus:CotizacionEmisionSDT>
+            <gaus:CodError>?</gaus:CodError>
+            <gaus:DesError>?</gaus:DesError>
+         </gaus:Response>
+      </gaus:Colon_WS_CotEmision.ExecuteResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="GAUSmpaction/ACOLON_WS_COTEMISION.Execute"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
